@@ -6,7 +6,7 @@ exports.validate = ( method ) => {
     switch ( method ) {
         case "signup": {
             return [
-                body("playerName", 'No name was entered').exists().notEmpty().toLowerCase().isString(),
+                body("playerName", 'Incorrect player name format entered').exists().notEmpty().toLowerCase().isString(),
             ]
         }    
             break;
@@ -22,16 +22,18 @@ exports.signup = async (req, res, next ) => {
 
         const errors = validationResult(req);
 
-        const data = {
-            playerName: req.body.playerName
-        };
+        const playerName = req.body.playerName
+
         
-        playersService.signup( request , (error, result) => {
+        playersService.signup( playerName , (token, result) => {
             return (
                 res.status(200).json({
                     success: true,
-                    data: results,
-                    error: error
+                    info: result,
+                    data: {
+                        playerName: playerName,
+                        token: token
+                    }
                 })
             )
         })
