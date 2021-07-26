@@ -66,7 +66,7 @@ The page will refresh if you make edits to the code.
 You will also see any compile and lint errors in the console.
 
 
-* **Start app using a dev environment**
+* **Run on a dev environment**
 ```
 npm run dev
 ```
