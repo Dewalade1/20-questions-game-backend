@@ -39,7 +39,7 @@ npm i
 
 ### Option 1
 
-* The easiest way to start up the app is to [click here](http://)
+* The easiest way to start up the backend app is to [click here](https://twentyquestions20.herokuapp.com/)
 
 ### Option 2
 
