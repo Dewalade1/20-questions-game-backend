@@ -41,3 +41,21 @@ exports.signup = async (req, res, next ) => {
         return next(err)
     }
 }
+
+exports.auth = async (req, res, next ) => {
+
+    try{
+
+        const playerName = req.body.playerName
+
+        const errors = validationResult(req)
+
+        playersService.auth( playerName , (error, result) => {
+
+            return res.status(200).send(result)
+
+        })
+    } catch (err) {
+        return next(err)
+    }
+}

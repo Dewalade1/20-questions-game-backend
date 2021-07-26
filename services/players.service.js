@@ -13,7 +13,7 @@ exports.signup = (playerName , callback) => {
         'C1QdZDViz53pivlygvdWcHxOC0yL7aMi'
         ]
 
-    const tokenKey = tokenList[Math.floor(Math.random() * tokenList.length)]
+    const tokenKey = 'E6FMgySr0oRslkd4up0urTpflCG0n11z'
 
     const token = jwt.sign(
         { 
@@ -26,4 +26,9 @@ exports.signup = (playerName , callback) => {
     )
 
     return callback(token, 'token fetched')
+}
+
+exports.auth = (result , callback) => {
+
+    return callback(null, 'user Authenticated')
 }
